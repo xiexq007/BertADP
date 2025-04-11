@@ -25,12 +25,12 @@ cd BertADP
 pip install -r requirements.txt --ignore-installed
 python BertADP.py example/example.csv
 ```
-The prediction results will be saved to prediction_result.csv.
+The prediction results will be saved to `prediction_result.csv`.
 
 ---
 
 ### 📦 Environment dependencies  
-Please use Python 3.11 or above, and install the following dependencies (it is recommended to use a virtual environment).
+Please use `Python 3.11` or above, and install the following dependencies (it is recommended to use a virtual environment).
 ```
 pip install -r requirements.txt --ignore-installed
 ```
@@ -38,7 +38,7 @@ pip install -r requirements.txt --ignore-installed
 ---
 
 ### 📥 Input Format
-The input should be a CSV file with a single column named `Sequence`, containing raw amino acid sequences, like:
+The input should be a `CSV file` with a single column named `Sequence`, containing raw amino acid sequences, like:
 ```
 Sequence
 GPPGPA
@@ -58,9 +58,9 @@ pip install -r requirements.txt --ignore-installed
 ```
 python BertADP.py example/example.csv
 ```
-- example/example.csv can be replaced with your own file.
-3. Output
-The script will generate a prediction_result.csv file with the following format:
+- `example/example.csv` can be replaced with your own file.
+3. Output:\
+The script will generate a `prediction_result.csv` file with the following format:
 ```
 Sequence,Positive_Probability,Prediction
 GPPGPA,0.96674114,1
