@@ -20,7 +20,7 @@ BertADP/
 ### ⚡ Quick Start
 You can clone this repository and run predictions in a few steps:
 ```
-git clone https://github.com/xqxie007/BertADP.git
+git clone https://github.com/xiexq007/BertADP.git
 cd BertADP
 pip install -r requirements.txt --ignore-installed
 python BertADP.py example/example.csv
