@@ -1,9 +1,9 @@
-# 🧬 BertADP: A BERT-based Predictor for Anti-Diabetic Peptides
-## **BertADP** is a protein sequence classification tool built by fine-tuning the [ProtBert](https://huggingface.co/Rostlab/prot_bert) language model. It predicts whether a peptide sequence has anti-diabetic activity.
+## 🧬 BertADP: A BERT-based Predictor for Anti-Diabetic Peptides
+### **BertADP** is a protein sequence classification tool built by fine-tuning the [ProtBert](https://huggingface.co/Rostlab/prot_bert) language model. It predicts whether a peptide sequence has anti-diabetic activity.
 
 ---
 
-## 📁 Project Structure
+### 📁 Project Structure
 ```
 BertADP/ 
 ├── BertADP.py # Main execution script 
@@ -17,7 +17,7 @@ BertADP/
 
 ---
 
-## ⚡ Quick Start
+### ⚡ Quick Start
 You can clone this repository and run predictions in a few steps:
 ```
 git clone https://github.com/xqxie007/BertADP.git
@@ -29,7 +29,7 @@ The prediction results will be saved to prediction_result.csv.
 
 ---
 
-## 📦 Environment dependencies  
+### 📦 Environment dependencies  
 Please use Python 3.11 or above, and install the following dependencies (it is recommended to use a virtual environment).
 ```
 pip install -r requirements.txt --ignore-installed
@@ -37,7 +37,7 @@ pip install -r requirements.txt --ignore-installed
 
 ---
 
-## 📥 Input Format
+### 📥 Input Format
 The input should be a CSV file with a single column named `Sequence`, containing raw amino acid sequences, like:
 ```
 Sequence
@@ -49,7 +49,7 @@ SPTIPFFDPQIPK
 
 ---
 
-## 🚀 How to Use (Detailed)
+### 🚀 How to Use (Detailed)
 1. Install dependencies (recommended in a virtual environment):
 ```
 pip install -r requirements.txt --ignore-installed
@@ -73,7 +73,7 @@ SPTIPFFDPQIPK,0.9591547,1
 
 ---
 
-## 🧠 Model description
+### 🧠 Model description
 The model used in this project is based on the pre-trained **ProtBert** model (`Rostlab/prot_bert`) from the [Hugging Face Model Hub](https://huggingface.co/Rostlab/prot_bert). It is fine-tuned for binary classification to distinguish anti-diabetic peptides (ADPs) from non-ADPs.  
 
 We use the `transformers` library along with the **PEFT** framework and **DoRA (Dropout as Reparameterization of Attention)** for parameter-efficient fine-tuning. Only the final classification head and selected attention modules are updated during training.
@@ -86,7 +86,7 @@ The fine-tuned model weights are saved in the `BertADP/` directory.
 
 ---
 
-## ⚠️ Notes
+### ⚠️ Notes
 The tokenizer will be automatically downloaded from HuggingFace the first time you run the script. Please ensure you are connected to the internet.
 
 ---
