@@ -1,11 +1,16 @@
+import os
 import argparse
 import pandas as pd
 import numpy as np
 import torch
+from peft import PeftModel
 from datasets import Dataset
 from transformers import AutoTokenizer, AutoModelForSequenceClassification, Trainer
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+os.environ["NCCL_P2P_DISABLE"] = "1"
+os.environ["NCCL_IB_DISABLE"] = "1"
+os.environ["TF_ENABLE_ONEDNN_OPTS"] = "0"
 
 def predict_and_save(input_csv_path, model_path, output_csv_path):
     # Load the data
@@ -34,7 +39,9 @@ def predict_and_save(input_csv_path, model_path, output_csv_path):
     tokenized_dataset.set_format(type='torch', columns=['input_ids', 'attention_mask'])
 
     # Load the model
-    model = AutoModelForSequenceClassification.from_pretrained(model_path).to(device)
+    base_model = AutoModelForSequenceClassification.from_pretrained("Rostlab/prot_bert", num_labels=2)
+    model = PeftModel.from_pretrained(base_model, model_path)
+    model = model.to(device)
     trainer = Trainer(model=model)
 
     # Perform model prediction
