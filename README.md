@@ -46,6 +46,7 @@ LLNQELLLNPTHQIYPV
 SPTIPFFDPQIPK
 ...
 ```
+- Sequence length should preferably be less than or equal to 41.
 
 ---
 
